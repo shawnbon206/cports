@@ -13,3 +13,12 @@ source = f"$(SOURCEFORGE_SITE)/joe-editor/JOE%20sources/joe-{pkgver}/joe-{pkgver
 sha256 = "495a0a61f26404070fe8a719d80406dc7f337623788e445b92a9f6de512ab9de"
 # FIXME
 hardening = ["!int", "vis", "cfi"]
+
+def post_install(self):
+
+    for f in [
+        "usr/share/applications/joe.desktop",
+        "usr/share/applications/jpico.desktop",
+        "usr/share/applications/jstar.desktop"
+    ]:
+        self.uninstall(f, glob=True)    
