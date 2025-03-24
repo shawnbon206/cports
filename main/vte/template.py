@@ -67,6 +67,15 @@ def post_extract(self):
         "subprojects/fast_float",
     )
 
+    
+def post_install(self):
+    # keep test terminal out of apps menu
+    for f in [
+        "usr/share/applications/*.desktop",
+        "usr/share/xdg-terminals/*.desktop",
+    ]:
+        self.uninstall(f, glob=True)
+
 
 @subpackage("vte-gtk3")
 def _(self):
