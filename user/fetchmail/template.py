@@ -1,0 +1,12 @@
+pkgname = "fetchmail" 
+pkgver = "6.4.38"
+pkgrel = 0
+build_style = "gnu_configure"
+configure_args = ["--with-ssl"]
+hostmakedepends = ["pkgconf", "autoconf", "gettext-devel", "automake"]
+makedepends = ["openssl3-devel"]
+pkgdesc = "Remote-mail retrieval utility"
+license = "GPL-2.0-only"
+url = "http://fetchmail.sourceforge.net"
+source = f"https://downloads.sourceforge.net/fetchmail/fetchmail-{pkgver}.tar.xz"
+sha256 = "a6cb4ea863ac61d242ffb2db564a39123761578d3e40d71ce7b6f2905be609d9"
